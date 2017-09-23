@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Inside HTML</title>
+    <script>
+      // javascript goes here!!!
+      console.log("Are we getting in here?");
+
+      // arrays - an indexed list of information
+      // strings and arrays
+      // strings - stringing together a list of characters
+      // "Jacob"
+      // "J"-"a"-"c"-"o"-"b"
+      // ["J","a","c","o","b"]
+      let name = "Jacob";
+      console.log(name[0]);
+      console.log(name[1]);
+      console.log(name[2]);
+      // you cannot mutate a string using the array syntax
+      name[2] = "k";
+      console.log(name[3]);
+      console.log(name[4]);
+
+
+      // strings and arrays
+      // split
+      let result2 = name.split(); // "Jacob" will turn your string into an array, ["Jacob"]
+
+      result2.join(); // turns an array back into a string
+
+      name.split(""); // ["J", "a", "c", "o", "b"]
+
+      //CSV
+      //"MSFT,AMZN,GOOG,HCG,BTC"
+      let stocks = "MSFT,AMZN,GOOG,HCG,BTC";
+      let result = stocks.split(",");
+
+      // i want to sell all my bitcoin
+      result.pop(); // pop will remove an item from the end of your array
+      // splice is also an option
+      console.log(result);
+
+      result.join("-");
+
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript Inside HTML Example</h1>
+  </body>
+</html>
