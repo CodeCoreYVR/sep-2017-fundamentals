@@ -1,0 +1,17 @@
+body {
+  background-image: url(https://i.pinimg.com/originals/ce/84/a6/ce84a6123bed7b06b7b76bdaaabe567e.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /*background-size: cover;*/
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  background-color: rgba(255, 0, 0, 0.5);
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  margin: 0px;
+  padding: 20px;
+}

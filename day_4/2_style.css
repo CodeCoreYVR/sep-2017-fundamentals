@@ -1,0 +1,29 @@
+body {
+   /* background-color: teal; */
+   /* rgb: red, green, blue */
+   /* background-color: rgb(255, 0, 0); */
+   /* alpha transparency is a range of 0 to 1 */
+   /* 100% not transparent, 50% transparent, 0% invisible */
+   /* background-color: rgba(255, 0, 0, 0.5); */
+   /* hexadecimal */
+   /* 0 -> 00 */
+   /* 255 -> FF */
+   background-color: #00CC00;
+}
+
+p {
+  color: blue;
+  text-decoration: line-through;
+  /* % are a relative unit of measurement */
+  width: 100%;
+  /* px - absolute unit of measurement */
+  /*width: 400px;*/
+  height: 200px;
+  text-align: center;
+  /* colour, thickness, style */
+  border: tomato thin dashed;
+  /* opacity controls transparency between a range of 0 to 1 */
+  opacity: 1;
+  /*background-color: magenta;*/
+  background-image: url(skyscraper.png);
+}

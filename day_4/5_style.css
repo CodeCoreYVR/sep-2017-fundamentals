@@ -1,0 +1,21 @@
+body {
+  margin: 0px;
+}
+
+#blue {
+  background-color: blue;
+  width: 500px;
+  height: 500px;
+}
+
+#red {
+  background-color: red;
+  width: 250px;
+  height: 250px;
+}
+
+#green {
+  background-color: green;
+  width: 125px;
+  height: 125px;
+}

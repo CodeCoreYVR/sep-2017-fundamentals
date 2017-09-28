@@ -1,0 +1,33 @@
+body {
+  background-image: url(arches.png);
+}
+
+h1 {
+  color: firebrick;
+}
+
+p {
+  font-size: 20px;
+  text-align: right;
+}
+
+ul {
+  text-decoration: underline;
+  list-style: square;
+}
+
+input {
+  /*border: thick black solid;*/
+  /*border-top: 0;*/
+  border-top: none;
+  border-bottom: thick black solid;
+  border-left: none;
+  border-right: none;
+}
+
+/* targeting an element using ID */
+#favourite {
+  font-size: 20px;
+  font-weight: bold;
+  color: maroon;
+}
