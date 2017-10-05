@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Block vs Inline</title>
+    <style>
+      h1 {
+        display: block;
+        background-color: teal;
+        color: firebrick;
+        border: thin red solid;
+      }
+      p {
+        display: block;
+        background-color: gold;
+        color: purple;
+        border: thick dashed green;
+      }
+      span {
+        display: inline;
+        display: inline-block;
+        background-color: lavender;
+        color: maroon;
+        border: thin dotted brown;
+        width: 100px;
+        height: 100px;
+      }
+      button {
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+      }
+      title {
+        /* hides the element from the document */
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>What is a Block?</h1>
+    <p>A block takes up the entire horizontal real estate of the page</p>
+
+    <h1>Inline Elements</h1>
+    <p>They share the horizontal real estate, they resize to the width of their content</p>
+    <span>Jacob</span>
+    <span style="display:none">Matt</span>
+    <span style="display:none">Tam</span>
+    <span>Steve</span>
+    <span>Wesam</span>
+    <span>Jose</span>
+    <span>Dan</span>
+    <span>Chris</span>
+    <span>Luc</span>
+    <span>Jen</span>
+
+    <h1>Inline-Block</h1>
+    <p>You get the best of both worlds, they sit inline and they listen for width and height</p>
+    <button>Hello</button>
+    <button>Hello</button>
+    <button>Hello</button>
+  </body>
+</html>
