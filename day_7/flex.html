@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flex Box Example</title>
+    <style>
+      .container {
+        border: thick solid brown;
+        width: 100%;
+        padding: 10px;
+        background-color: lavender;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: teal;
+        border: thin red solid;
+        color: white;
+        /*display: inline-block;*/
+        /*float: left;*/
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- flexbox: parent & children == container & items -->
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <!-- grids -->
+    <div class="grid container">
+      <div class="item">X</div>
+      <div class="item">O</div>
+      <div class="item">X</div>
+
+      <div class="item">O</div>
+      <div class="item">X</div>
+      <div class="item">O</div>
+
+      <div class="item">X</div>
+      <div class="item">O</div>
+      <div class="item">X</div>
+    </div>
+  </body>
+</html>
