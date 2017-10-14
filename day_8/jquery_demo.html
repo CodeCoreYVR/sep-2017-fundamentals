@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Demo</title>
+    <!-- bring in an external library -->
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+      // _.flatten();
+      // $ -> selector
+      // ready is higher order function
+      $(document).ready(function(){
+        // document.getElementById("header").innerHTML = "Matt Was Here";
+        $('#header').html("Tam Was Here");
+        $('ul#homework li');
+        $('img, a');
+      });
+    </script>
+    <style>
+      * {
+        border: thin red solid;
+      }
+      h1 {
+        background-color: pink;
+      }
+      #header {
+        color: brown;
+      }
+      .class {
+        background-color: yellow;
+      }
+      h1, p, li {
+        font-size: 20px;
+      }
+      /* contains */
+      ul li {
+        list-style: none;
+      }
+      /* >, direct parent, child relationship */
+      ul > li {
+        list-style-type: square;
+      }
+      img {}
+      img.large {}
+      #reset-button {}
+      /* selecting all the list items inside an unordered list with the id homework */
+      ul#homework li {}
+      /* selecting all the image tags and anchor tags on the page */
+      img, a {}
+
+      #reset-button, #publish-button {}
+    </style>
+  </head>
+  <body>
+    <button id="reset-button"></button>
+    <button id="publish-button"></button>
+
+    <ul id="homework">
+      <li>History</li>
+      <li>Math</li>
+      <li>Science</li>
+    </ul>
+
+    <img src="puppy.jpg">
+    <img src="kitten.jpg" class="large">
+    <button id="reset-button"></button>
+
+    <h1 id="header" class="highlight">Crypto Currencies</h1>
+    <ul>
+      <li></li>
+    </ul>
+    <ul>
+      <strong>
+        <li></li>
+      </strong>
+    </ul>
+  </body>
+</html>

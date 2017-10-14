@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+      // 1. make sure the document is ready
+      // 2. prevent the default form action so the page doesn't reload
+      $(document).ready(function(){
+
+        $('input[type=text]').focus();
+        // $('input[type=text]').blur();
+
+        $('form').submit(function(event){
+          event.preventDefault();
+
+          // 3b. we only want our new task to appended to the list when the form is submitted
+          let task = $('input[type=text]').val();
+          $('ol').append('<li>' + task + '</li>');
+          
+          $('li').click(function(){
+            console.log('a task was clicked');
+            // how do i target the specific list item that was clicked
+            $(this).fadeOut();
+          });
+
+          // 4. clear the text field, set the value for the form element to an empty string
+          $('input[type=text]').val("");
+        });
+
+        // 3. add the task to the list
+        // 4. clear the text field
+        // 5. give the text field focus, so the user can add their next task
+
+        // .append();
+        // adds content to the end of the selector's children
+        // <ol>
+        //   <li>Wake Up</li>
+        //   <put content here>
+        // </ol>
+
+        // .prepend();
+        // adds content to the start of the selector's children
+        // <ol>
+        //   <put content here>
+        //   <li>Wake Up</li>
+        // </ol>
+
+        // when a todo list item is clicked, make it disappear
+        $('li').click(function(){
+          console.log('a task was clicked');
+          // how do i target the specific list item that was clicked
+          $(this).fadeOut();
+        });
+
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Jacob's ToDo List</h1>
+    <form action="" method="">
+      <label>Task:</label>
+      <input type="text">
+      <input type="submit" value="Add Task">
+    </form>
+
+    <ol>
+      <li>Wake Up</li>
+      <li>Drink Coffee</li>
+      <li>Change Clothes</li>
+    </ol>
+  </body>
+</html>

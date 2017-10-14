@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <script src="jquery-3.2.1.js"></script>
+    <!-- i want to select the form using jquery -->
+    <!-- step 1: create a script tag -->
+    <script>
+      // step 2: we must make sure the page has loaded before running any code
+      $(document).ready(function() {
+        // these instructions will run when the document has completely loaded
+        // step 3: use jquery to select the form tag?
+        $('form').submit(function(event){
+          console.log("This gets called everytime my form is submitted");
+          // input type of text
+          let name = $('input[type=text]').val(); // this is a getter
+          console.log(name);
+
+          $('input[type=text]').val("Matt"); // this is a setter
+
+          // input type of submit
+          // $('input[type=submit]');
+
+          // stops the default action of the form
+          event.preventDefault();
+          // window.location.href = "http://www.disneyland.com";
+        });
+        // $('form#contact');
+        // $('#contact');
+
+      });
+    </script>
+  </head>
+  <body>
+    <!-- the default behaviour of a form is to reset the page -->
+    <form id="contact" action="jquery_demo.html" method="">
+      <input type="text">
+      <input type="submit">
+    </form>
+  </body>
+</html>
