@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Demo</title>
+    <!-- <link rel="styesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+    <style>
+      /*@import 'style.css';*/
+      /*@font-face */
+      /*@keyframes */
+      body {
+        background-color: lightblue;
+        color: white;
+        font-size: 30px;
+      }
+      /*
+      @media (max-width: 767px) {
+        body {
+          background-color: red;
+        }
+      }*/
+      .red { background-color: red; }
+      .orange { background-color: orange; }
+      .yellow { background-color: yellow; }
+      .green { background-color: green; }
+      .blue { background-color: blue; }
+      .indigo { background-color: indigo; }
+      .violet { background-color: violet; }
+
+    </style>
+    <script>
+      // $(document).ready(function(){
+      //   $('#nav1').click(function() {
+      //       $('#nav0').removeClass('active');
+      //       $(this).addClass('active');
+      //   });
+      // });
+    </script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDzbLPufuhjWGvW9NBFhwn7Fse7Pt_1VQQ",
+        authDomain: "day-9-d765d.firebaseapp.com",
+        databaseURL: "https://day-9-d765d.firebaseio.com",
+        projectId: "day-9-d765d",
+        storageBucket: "",
+        messagingSenderId: "921139827322"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Fundamentals Dev Studio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" id="nav0" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" id="nav1" href="#portfolio">Portfolio</a>
+          <a class="nav-item nav-link" href="#pricing">Pricing</a>
+          <a class="nav-item nav-link" href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+      <h1 class="display-3">Fundamentals Dev Studio</h1>
+      <p class="lead">Making the internet beautiful.</p>
+      <hr class="my-4">
+      <p>Contact us for pricing.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p>
+    </div>
+
+    <h1>Is Bootstrap Loaded?</h1>
+
+    <div class="col-lg-6 col-md-4 col-sm-2 col-xs-1 red">HTML</div>
+    <div class="col-lg-6 col-md-11 col-sm-5 col-xs-3 orange">CSS</div>
+    <div class="col-lg-6 yellow">JavaScript</div>
+    <div class="col-lg-6 green">jQuery</div>
+    <div class="col-lg-6 blue">Bootstrap</div>
+    <div class="col-lg-6 indigo">Firebase</div>
+    <div class="col-lg-6 violet">LoDash</div>
+
+    <div id="portfolio" style="background-color: lavender">
+      <h2>This is my portfolio</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="pricing" style="background-color: purple">
+      <h2>This is our pricing</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="contact" style="background-color: orange">
+      <h2>Contact us</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<!--  -->
