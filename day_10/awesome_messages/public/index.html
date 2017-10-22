@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome Messages</title>
+    <style>
+      .message {
+        margin-bottom: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCj7B2-tN-yPsZ2nOOt6-qyAT0srCR84IM",
+        authDomain: "awesome-messages-8413b.firebaseapp.com",
+        databaseURL: "https://awesome-messages-8413b.firebaseio.com",
+        projectId: "awesome-messages-8413b",
+        storageBucket: "awesome-messages-8413b.appspot.com",
+        messagingSenderId: "884402577227"
+      };
+      firebase.initializeApp(config);
+
+      const database = firebase.database();
+      const messagesRef = database.ref('messages');
+      $(document).ready(function(){
+        // this will execute the callback function after retrieving the database
+        // from the Firebase database. At first it will fetch all messages and
+        // then it will be executed when a new message is added
+        messagesRef.on('child_added', function(data){
+          console.log(data.val());
+          const message = data.val();
+          $('#messages').prepend(`
+            <div class='message card' id='${data.key}'>
+              <div class='card-header'>${message.name}</div>
+              <div class='card-body'>
+                ${message.body}
+                <div>
+                  <a href='' class='delete btn btn-danger' data-id='${data.key}'>
+                    Delete
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            `);
+          });
+
+          messagesRef.on('child_removed', function(data){
+            $(`#${data.key}`).fadeOut();
+          });
+
+          // this is using event delegation in jQuery. We need to do this
+          // because the delete buttons don't exits when the page if first
+          // loaded but the div with id messages does exist. So we need to have
+          // the click event attached to the `messages` and then it will get
+          // invoked when a click happens on an element with class `delete`
+          // inside that div.
+          $('#messages').on('click', '.delete', function(event){
+            event.preventDefault();
+            database.ref(`messages/${$(this).data('id')}`).remove();
+          });
+
+          $('#message-form').submit(function(event){
+            event.preventDefault();
+            // if($('#body').val() === '') {
+            //   alert('Please enter a message');
+            //   return;
+            // }
+            messagesRef.push({
+                              name: $('#name').val() ,
+                              body: $('#body').val()
+                             });
+            $('#name').val('');
+            $('#body').val('');
+            $('#name').focus();
+          });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Awesome Messages</h1>
+      <form id="message-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id='name' class='form-control'>
+        </div>
+        <div class="form-group">
+          <label for="body">Message</label>
+          <textarea id="body" class="form-control"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary">
+      </form>
+      <hr>
+      <div id="messages"></div>
+    </div>
+  </body>
+</html>
